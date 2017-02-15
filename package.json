@@ -1,0 +1,26 @@
+{
+  "name": "react-native-styduce",
+  "version": "0.0.1",
+  "description": "A styling helper for react native projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanipcode/react-native-styduce.git"
+  },
+  "keywords": [
+    "react-native",
+    "styling",
+    "react-native",
+    "styling",
+    "styduce"
+  ],
+  "author": "Muhammad Hanif (hanipcode)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hanipcode/react-native-styduce/issues"
+  },
+  "homepage": "https://github.com/hanipcode/react-native-styduce#readme"
+}
