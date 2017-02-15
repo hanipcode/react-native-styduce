@@ -110,7 +110,7 @@ function createStyleObject(styleObj) {
 }
 
 module.exports = {
-  createStyle: () => createStyleObject(),
+  createStyle: (styleObj) => createStyleObject(styleObj),
 };
 
 // const example = {
