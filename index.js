@@ -65,7 +65,6 @@ function getStyleProperty(Obj) {
 }
 
 function combineWithInheritedStyle(parent, current) {
-  console.log(current);
   return Object.assign(current, getStyleProperty(parent));
 }
 
