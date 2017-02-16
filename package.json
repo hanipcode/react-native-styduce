@@ -1,6 +1,6 @@
 {
   "name": "react-native-styduce",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A styling helper for react native projects",
   "main": "index.js",
   "scripts": {
