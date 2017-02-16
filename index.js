@@ -77,24 +77,21 @@ function processChild(childStyleObj, objName) {
   const result = objKeys.reduce((initial, keyName, index) => {
     const addedClass = {};
     if (!(childStyleObj[keyName] instanceof Object)) {
-      mainObj[objName] = {[keyName] : childStyleObj[keyName]};
+      mainObj[objName] = combineWithInheritedStyle(childStyleObj, {[keyName]: childStyleObj[keyName]})
+      // console.log(combineWithInheritedStyle(childStyleObj, mainObj));
       return initial;
     } else if ((childStyleObj[keyName] instanceof Object) && keyName.slice(0,2) === "__") {
       addedClass[objName+keyName] = childStyleObj[keyName];
-      if (hasUnderscore(childStyleObj[keyName])) {
+      if (hasUnderscore(childStyleObj[keyName]) || hasDobleDollar(childStyleObj)) {
         return processChild(childStyleObj[keyName], objName+keyName);
       }
-      if (hasDobleDollar(childStyleObj[keyName])) {
-        return processChild(childStyleObj[keyName], objName+keyName);
-      }
-      return Object.assign(initial, addedClass);
     } else if ((childStyleObj[keyName] instanceof Object) && keyName.slice(0,2) === "$$") {
       addedClass[objName+keyName] = combineWithInheritedStyle(childStyleObj, childStyleObj[keyName]);
       if (hasDobleDollar(childStyleObj[keyName])) {
         return processChild(childStyleObj[keyName], objName+keyName);
       }
-      return Object.assign(initial, addedClass);
     }
+      return Object.assign(initial, addedClass);
   },{});
   return Object.assign({}, mainObj, result);
 }
